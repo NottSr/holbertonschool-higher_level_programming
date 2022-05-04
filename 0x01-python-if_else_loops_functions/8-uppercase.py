@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-from ast import Num
-
-
 def uppercase(str):
     i = 0
     while i < len(str):
