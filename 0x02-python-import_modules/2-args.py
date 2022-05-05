@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-from sys import argv
+import sys
 i = 1
-print(f"{len(argv) - 1} arguments", end='')
+print(f"{len(sys.argv) - 1} arguments", end='')
 
-if len(argv) == 1:
+if len(sys.argv) == 1:
     print(".")
 else:
     print(":")
 
-while i < len(argv):
-    print(f"{i}: {argv[i]}")
+while i < len(sys.argv):
+    print(f"{i}: {sys.argv[i]}")
     i += 1
