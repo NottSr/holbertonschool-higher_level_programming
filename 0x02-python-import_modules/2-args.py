@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-import sys
-i = 1
-print(f"{len(sys.argv) - 1} arguments", end='')
+if __name__ == '__main__':
+    from sys import argv
+    i = 1
+    print(f"{len(argv) - 1} arguments", end='')
 
-if len(sys.argv) == 1:
-    print(".")
-else:
-    print(":")
+    if len(argv) == 1:
+        print(".")
+    else:
+        print(":")
 
-while i < len(sys.argv):
-    print(f"{i}: {sys.argv[i]}")
-    i += 1
+    while i < len(argv):
+        print(f"{i}: {argv[i]}")
+        i += 1
