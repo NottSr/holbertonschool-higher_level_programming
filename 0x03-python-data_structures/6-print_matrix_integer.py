@@ -11,4 +11,4 @@ def print_matrix_integer(matrix=[[]]):
                     print('{:d}'.format(val), end=' ')
                 i += 1
 
-            print('$')
+            print()
