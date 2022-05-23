@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def raise_exception():
-    x = "hello"
+    x = 5
 
-    if not type(x) is int:
+    if not type(x) is str:
         raise TypeError()
