@@ -1,15 +1,23 @@
 #!/usr/bin/python3
-from operator import or_
+"""Define a square class"""
 
 
 class Square:
+    """
+    A simple class with the size/position attribute and error messages
+    """
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         self.__position = position
-
+    """
+    Returns the current square area
+    """
     def area(self):
         return self.__size ** 2
-
+    """
+    Prints a '#' in a range of size x size
+    Prints space based on positions provided
+    """
     def my_print(self):
         if self.__size == 0:
             print()
