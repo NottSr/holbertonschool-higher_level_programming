@@ -1,8 +1,16 @@
 #!/usr/bin/python3
+"""Define a square class"""
+
+
 class Square:
+    """
+    A simple class with the size attribute
+    """
     def __init__(self, size=0):
         self.__size = size
-
+    """
+    Returns the current square area
+    """
     def area(self):
         return self.__size ** 2
 
