@@ -7,12 +7,12 @@ class Square:
     A simple class with the size/position attribute and error messages
     """
     def __init__(self, size=0, position=(0, 0)):
-        
+
         if not type(size) is int:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        
+
         if type(position) is not tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif len(position) is not 2:
