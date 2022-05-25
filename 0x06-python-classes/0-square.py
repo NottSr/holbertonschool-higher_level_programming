@@ -1,10 +1,7 @@
 #!/usr/bin/python3
-"""Square Class
-
-Class with no function
-
-"""
+"""define a square class"""
 
 
 class Square:
+    """A simple class without methods or public attributes"""
     pass
