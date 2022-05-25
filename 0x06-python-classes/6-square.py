@@ -7,7 +7,11 @@ class Square:
     A simple class with the size/position attribute and error messages
     """
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
         if type(position) is not tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif len(position) is not 2:
@@ -16,6 +20,7 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif type(position[0]) is not int or type(position[1]) is not int:
             raise TypeError("position must be a tuple of 2 positive integers")
+        self.__size = size
         self.__position = position
     """
     Returns the current square area
@@ -34,18 +39,6 @@ class Square:
                 print()
             for i in range(self.__size):
                 print(' ' * self.__position[0] + '#' * self.__size)
-
-    @property
-    def size(self):
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        self.__size = value
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        if value < 0:
-            raise ValueError("size must be >= 0")
 
     @property
     def position(self):
