@@ -4,7 +4,7 @@
 
 class Square:
     """
-    A simple class with the size attribute
+    A simple class with the size attribute and error messages
     """
     def __init__(self, size=0):
         self.__size = size
