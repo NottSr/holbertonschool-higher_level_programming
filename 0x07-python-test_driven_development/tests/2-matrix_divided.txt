@@ -1,0 +1,79 @@
+ =============================
+| TEST "matrix_divided" FUNCTION |
+ =============================
+
+ =================
+| IMPORT THE FILE |
+ =================
+
+matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+ ===============
+| SUCCESS CASES |
+ ===============
+
+# Test 1 - Two integers
+>>> matrix = [[], [], []]
+>>> add_integer(1, 2)
+3
+
+# Test 2 - One integer
+>>> add_integer(2)
+100
+
+# Test 3 - Second integer entered as negative
+>>> add_integer(0, -98)
+-98
+
+# Test 4 - Float number and negative number
+>>> add_integer(100.3, -2)
+98
+
+# Test 5 - Returns from the same functions as parameters
+>>> add_integer(add_integer(5, 5), add_integer(11, 19))
+40
+
+ =============
+| ERROR CASES |
+ =============
+
+# Test 6 - No integers entered
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+# Test 7 - Variable not defined as parameter
+>>> add_integer(a, 15)
+Traceback (most recent call last):
+...
+NameError: name 'a' is not defined
+
+# Test 8 - String as parameter
+>>> add_integer(15, "a")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+# Test 9 - Number with mixed values as parameter
+>>> add_integer(1000x00, 2)
+Traceback (most recent call last):
+...
+SyntaxError: invalid syntax
+
+# Test 10 - Special characters as parameter
+>>> add_integer(??.!?")
+Traceback (most recent call last):
+...
+SyntaxError: invalid syntax
+
+# Test 11 - Integer and infinite float number
+>>> add_integer(5, 1e400)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+# Test 12 - Integer and NaN float number
+>>> add_integer(5, float("nan"))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
