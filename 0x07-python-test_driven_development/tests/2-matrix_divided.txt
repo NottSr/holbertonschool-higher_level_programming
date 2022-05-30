@@ -6,74 +6,115 @@
 | IMPORT THE FILE |
  =================
 
-matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
  ===============
 | SUCCESS CASES |
  ===============
 
-# Test 1 - Two integers
->>> matrix = [[], [], []]
->>> add_integer(1, 2)
-3
+# Test 1 - A simple integer matrix with 2 rows
+>>> matrix = [[1, 2, 3],[4, 5, 6]]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
-# Test 2 - One integer
->>> add_integer(2)
-100
+# Test 2 - A simple integer matrix with 2 rows and negative numbers
+>>> matrix = [[-1, -2, -3],[-4, -5, -6]]
+>>> matrix_divided(matrix, 3)
+[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
 
-# Test 3 - Second integer entered as negative
->>> add_integer(0, -98)
--98
+# Test 3 - A simple matrix with 2 rows and infinite numbers
+>>> matrix = [[1e400, 1e500, 1e600],[1e900, 1e800, 1e700]]
+>>> matrix_divided(matrix, 3)
+[[inf, inf, inf], [inf, inf, inf]]
 
-# Test 4 - Float number and negative number
->>> add_integer(100.3, -2)
-98
+ ======================
+| ERROR CASES - matrix |
+ ======================
 
-# Test 5 - Returns from the same functions as parameters
->>> add_integer(add_integer(5, 5), add_integer(11, 19))
-40
-
- =============
-| ERROR CASES |
- =============
-
-# Test 6 - No integers entered
->>> add_integer()
-Traceback (most recent call last):
-TypeError: add_integer() missing 1 required positional argument: 'a'
-
-# Test 7 - Variable not defined as parameter
->>> add_integer(a, 15)
+# Test 4 - Matrix set as string instead of tuple
+>>> matrix = "Hello World!"
+>>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
 ...
-NameError: name 'a' is not defined
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-# Test 8 - String as parameter
->>> add_integer(15, "a")
+# Test 5 - Matrix with some chars in it
+>>> matrix = [[1, "a", 3],[4, 5, "b"],["c", 8, 9]]
+>>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
 ...
-TypeError: b must be an integer
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-# Test 9 - Number with mixed values as parameter
->>> add_integer(1000x00, 2)
+# Test 6 - Empty matrix
+>>> matrix = []
+>>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
 ...
-SyntaxError: invalid syntax
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-# Test 10 - Special characters as parameter
->>> add_integer(??.!?")
+# Test 7 - Empty matrix with 2 rows
+>>> matrix = [[],[]]
+>>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
 ...
-SyntaxError: invalid syntax
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-# Test 11 - Integer and infinite float number
->>> add_integer(5, 1e400)
+# Test 8 - Matrix whit lists in lists
+>>> matrix = [[[20.0], [35], [15.0]],[[25], [5.0], [28]]]
+>>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
 ...
-OverflowError: cannot convert float infinity to integer
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-# Test 12 - Integer and NaN float number
->>> add_integer(5, float("nan"))
+# Test 9 - Matrix values entered as chars
+>>> matrix = [['1', '2', '3'],['4', '5', '6']]
+>>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
 ...
-ValueError: cannot convert float NaN to integer
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test 10 - Matrix whit a string in one of the rows
+>>> matrix = [[1, 2, 3],[4, 5, 6],"Hello World!"]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test 11 - Matrix with a row bigger than the other one
+>>> matrix = [[1, 2, 3],[4, 5, 6, 7, 8]]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+ ===================
+| ERROR CASES - div |
+ ===================
+
+# Test 12 - div value is a char
+>>> matrix = [[1, 2, 3],[4, 5, 6]]
+>>> matrix_divided(matrix, "a")
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+# Test 13 - div value is 0
+>>> matrix = [[1, 2, 3],[4, 5, 6]]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+# Test 14 - Div value is None
+>>> matrix = [[1, 2, 3],[4, 5, 6]]
+>>> matrix_divided(matrix, None)
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+# Test 15 - Div value is NaN
+>>> matrix = [[1, 2, 3],[4, 5, 6]]
+>>> matrix_divided(matrix, float('nan'))
+Traceback (most recent call last):
+...
+TypeError: div must be a number
