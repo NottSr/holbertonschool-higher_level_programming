@@ -1,0 +1,81 @@
+ ==============================
+| TEST "print_square" FUNCTION |
+ ==============================
+
+ =================
+| IMPORT THE FILE |
+ =================
+
+>>> print_square = __import__('4-print_square').print_square
+
+ ===============
+| SUCCESS CASES |
+ ===============
+
+Test 1 - Integer size
+>>> print_square(4)
+####
+####
+####
+####
+
+Test 2 - Zero value
+>>> print_square(0)
+
+
+Test 3 - "Big" size
+>>> print_square(20)
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+
+ =============
+| ERROR CASES |
+ =============
+
+Test 4 - String value
+>>> print_square("I'm a string!")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+Test 5 - Negative value
+>>> print_square(-4)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+Test 6 - No value
+>>> print_square()
+Traceback (most recent call last):
+...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+Test 7 - Infinite value
+>>> print_square(1e900)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+Test 8 - Infinite negative value
+>>> print_square(-1e900)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer

@@ -1,0 +1,61 @@
+ ================================
+| TEST "matrix_divided" FUNCTION |
+ ================================
+
+ =================
+| IMPORT THE FILE |
+ =================
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+ ===============
+| SUCCESS CASES |
+ ===============
+
+Test 1 - Strings as values
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+Test 2 - Only one string as value
+>>> say_my_name("Bob")
+My name is Bob 
+
+Test 3 - No value
+>>> say_my_name("", )
+My name is  
+
+Test 4 - Adding 2 blank lines
+>>> say_my_name("\n", "\n")
+My name is 
+<BLANKLINE>
+<BLANKLINE>
+
+Test 5 - Only with spaces as values
+>>> say_my_name(" ", " ")
+My name is    
+
+Test 6 - Space as first name and a last name
+>>> say_my_name(" ", "Smith")
+My name is   Smith
+
+ =============
+| ERROR CASES |
+ =============
+
+Test 7 - Number value as first name
+>>> say_my_name(5, "Smith")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+Test 8 - Number value as last name
+>>> say_my_name("John", 5)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+Test 9 - Number value as first and last name
+>>> say_my_name(5, 5)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string

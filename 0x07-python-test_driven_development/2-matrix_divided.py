@@ -2,16 +2,21 @@
 """
 Module that checks for a NaN value
 """
+
+
 def isNaN(num):
     """
     Returns:
         True if value is NaN
     """
-    return num!= num
+    return num != num
+
 
 """
 Module that divides all elements of a matrix.
 """
+
+
 def matrix_divided(matrix, div):
     """
     Args:
@@ -37,7 +42,7 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    if not type(div) in (int, float) or isNaN(div) == True:
+    if not type(div) in (int, float) or isNaN(div) is True:
         raise TypeError("div must be a number")
 
     for i in range(len(matrix)):
@@ -47,7 +52,7 @@ def matrix_divided(matrix, div):
             if not type(matrix[i][j]) in (int, float):
                 raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
-            if not aux is len(matrix[i]):
+            if aux is not len(matrix[i]):
                 raise TypeError("Each row of the matrix must have the same size")
 
             num = matrix[i][j]
