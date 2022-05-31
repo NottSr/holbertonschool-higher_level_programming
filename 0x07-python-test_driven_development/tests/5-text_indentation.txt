@@ -1,0 +1,84 @@
+ ==================================
+| TEST "text_indentation" FUNCTION |
+ ==================================
+
+ =================
+| IMPORT THE FILE |
+ =================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+ ===============
+| SUCCESS CASES |
+ ===============
+
+Test 1 - Variable with text
+>>> text = "Hi! This is a string, right? I don't know."
+>>> text_indentation(text)
+Hi! This is a string, right?
+<BLANKLINE>
+I don't know.
+<BLANKLINE>
+
+Test 2 - Short text with special character
+>>> text_indentation("Hi, this is a string.")
+Hi, this is a string.
+<BLANKLINE>
+
+Test 3 - Short text
+>>> text_indentation("Hi, this is a string")
+Hi, this is a string
+
+Test 4 - Short text with special format
+>>> text_indentation("""Hi? \
+... This is a string. \
+... Right?""")
+Hi?
+<BLANKLINE>
+This is a string.
+<BLANKLINE>
+Right?
+<BLANKLINE>
+
+Test 5 - Special characters with a lot of spaces
+>>> text_indentation("     ?.:     ")
+?
+<BLANKLINE>
+.
+<BLANKLINE>
+:
+<BLANKLINE>
+
+ =============
+| ERROR CASES |
+ =============
+
+Test 6 - No arguments
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test 7 - Number as argument
+>>> text_indentation(125)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+Test 8 - Bool as argument
+>>> text_indentation(False)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+Test 9 - Type as argument
+>>> text_indentation(str)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+Test 10 - Infinite number as argument
+>>> text_indentation(1e900)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
