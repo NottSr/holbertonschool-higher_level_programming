@@ -1,0 +1,90 @@
+ =================
+| Test: 1-my_list |
+ =================
+
+ =================
+| IMPORT THE FILE |
+ =================
+
+>>> MyList = __import__('1-my_list').MyList
+
+ =========
+| SUCCESS |
+ =========
+
+Test 1 - Appending ints as values
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+Test 2 - Appending str and char as values
+
+>>> my_list = MyList()
+>>> my_list.append("a")
+>>> my_list.append("Python")
+>>> my_list.append("z")
+>>> my_list.append("Hello")
+>>> my_list.print_sorted()
+['Hello', 'Python', 'a', 'z']
+>>> print(my_list)
+['a', 'Python', 'z', 'Hello']
+
+Test 3 - Appending infinite numbers
+
+>>> my_list = MyList()
+>>> my_list.append(1e900)
+>>> my_list.append(1e700)
+>>> my_list.append(1e800)
+>>> my_list.print_sorted()
+[inf, inf, inf]
+>>> print(my_list)
+[inf, inf, inf]
+
+Test 4 - Appending negative and "large" numbers as values
+
+>>> my_list = MyList()
+>>> my_list.append(-100000000)
+>>> my_list.append(-400000000)
+>>> my_list.append(-200000000)
+>>> my_list.append(3000000000)
+>>> my_list.append(50)
+>>> my_list.print_sorted()
+[-400000000, -200000000, -100000000, 50, 3000000000]
+>>> print(my_list)
+[-100000000, -400000000, -200000000, 3000000000, 50]
+
+ =======
+| ERROR |
+ =======
+
+Test 5 - Appending float NaN
+
+>>> my_list = MyList()
+>>> my_list.append(float(NaN))
+Traceback (most recent call last):
+...
+NameError: name 'NaN' is not defined
+>>> my_list.print_sorted()
+[]
+>>> print(my_list)
+[]
+
+Test 6 - Without appending an argument
+
+>>> my_list = MyList()
+>>> my_list.append()
+Traceback (most recent call last):
+...
+TypeError: append() takes exactly one argument (0 given)
+>>> my_list.print_sorted()
+[]
+>>> print(my_list)
+[]
