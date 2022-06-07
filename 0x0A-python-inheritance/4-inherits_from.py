@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Define method
+Define method that checks the object
 """
 
 
