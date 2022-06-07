@@ -74,4 +74,7 @@ class Rectangle:
         return ("Rectangle(" + wval + ", " + hval + ")")
 
     def __del__(self):
+        """
+        Delete an instance
+        """
         print("Bye rectangle...")
