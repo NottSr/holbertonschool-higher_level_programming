@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Define class
+Define base class called BaseGeometry
 """
 
 
