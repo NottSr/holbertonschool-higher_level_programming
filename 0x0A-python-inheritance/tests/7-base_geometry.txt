@@ -24,63 +24,63 @@ Test 1 - String and int as parameters
 Test 2 - Two strings as parameters
 
 >>> try:
-    ...     bg.integer_validator("name", "John")
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] name must be an integer
+...     bg.integer_validator("name", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
 
 Test 3 - Second value as float NaN
 
 >>> try:
-    ...     bg.integer_validator("NaN", float('nan'))
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] NaN must be an integer
+...     bg.integer_validator("NaN", float('nan'))
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] NaN must be an integer
 
 Test 4 - Second value as float NaN
 
 >>> try:
-    ...     bg.integer_validator("NaN", float('nan'))
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] NaN must be an integer
+...     bg.integer_validator("NaN", float('nan'))
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] NaN must be an integer
 
 Test 5 - Second value as bool
 
 >>> try:
-    ...     bg.integer_validator("name", False)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] name must be an integer
+...     bg.integer_validator("name", False)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
 
 Test 6 - Second value as infinite number
 
 >>> try:
-    ...     bg.integer_validator("inf", 1e900)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] inf must be an integer
+...     bg.integer_validator("inf", 1e900)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] inf must be an integer
 
 Test 7 - Second value 0
 
 >>> try:
-    ...     bg.integer_validator("age", 0)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [ValueError] age must be greater than 0
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
 
 Test 8 - Second value is negative
 
 >>> try:
-    ...     bg.integer_validator("Negative", -4)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [ValueError] Negative must be greater than 0
+...     bg.integer_validator("Negative", -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] Negative must be greater than 0
 
 Test 9 - No parameters
 
 >>> try:
-    ...     bg.area()
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [Exception] area() is not implemented
+...     bg.area()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[Exception] area() is not implemented
