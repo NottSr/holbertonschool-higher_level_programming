@@ -40,10 +40,10 @@ Test 3 - Second value as float NaN
 Test 4 - Second value as float NaN
 
 >>> try:
-...     bg.integer_validator("NaN", float('nan'))
+...     bg.integer_validator("name", (8, ))
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] NaN must be an integer
+[TypeError] name must be an integer
 
 Test 5 - Second value as bool
 
@@ -84,3 +84,44 @@ Test 9 - No parameters
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [Exception] area() is not implemented
+
+Test 10 - None as parameter
+
+>>> try:
+...     bg.integer_validator("name", None)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+
+Test 11 - Dictionary value as parameter
+
+>>> try:
+...     bg.integer_validator("name", {3, 4})
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+
+Test 12 - List as parameter
+
+>>> try:
+...     bg.integer_validator("name", [])
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+
+Test 13 - Only first parameter set
+
+>>> try:
+...     bg.integer_validator("name")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] integer_validator() missing 1 required positional argument: 'value'
+
+
+Test 14: Without any parameter
+
+>>> try:
+...     bg.integer_validator()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
