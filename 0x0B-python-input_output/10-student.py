@@ -2,7 +2,6 @@
 """
 Define class method
 """
-from attr import attr
 
 
 class Student:
