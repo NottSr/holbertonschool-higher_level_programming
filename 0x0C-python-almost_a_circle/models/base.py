@@ -44,9 +44,9 @@ class Base:
     def save_to_file(cls, list_objs):
         """
         Args:
-            list_objs: _description_
+            list_objs: list of instances who inherits of Base
 
-        Returns: 
+        Returns JSON string representation of list_objs to a file
         """
         file_name = cls.__name__ + '.json'
         elm_dict = []
