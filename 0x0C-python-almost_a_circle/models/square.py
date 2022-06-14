@@ -40,7 +40,9 @@ class Square(Rectangle):
         """
         Returns a call to __str__ sending 'Square'
         """
-        return super().__str__('Square')
+        return '[Square] ({:d}) {:d}/{:d} - {:d}'.format(
+            self.id, self.x, self.y, self.width
+            )
 
     def update(self, *args, **kwargs):
         """
@@ -63,4 +65,9 @@ class Square(Rectangle):
         """
         Returns a class dictionary
         """
-        return vars(self)
+        return {
+            'id': self.id,
+            'x': self.x,
+            'size': self.size,
+            'y': self.y
+        }

@@ -28,10 +28,70 @@ class Rectangle(Base):
         self.int_checker(x, 'x')
         self.int_checker(y, 'y')
 
-        self.__width = width
-        self.__height = height
-        self.__x = x
         self.__y = y
+        self.__x = x
+        self.__height = height
+        self.__width = width
+
+    @property
+    def width(self):
+        """
+        ...
+        """
+        return self.__width
+
+    @width.setter
+    def width(self, val):
+        """
+        ...
+        """
+        self.int_checker(val, 'width')
+        self.__width = val
+
+    @property
+    def height(self):
+        """
+        ...
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, val):
+        """
+        ...
+        """
+        self.int_checker(val, 'height')
+        self.__height = val
+
+    @property
+    def x(self):
+        """
+        ...
+        """
+        return self.__x
+
+    @x.setter
+    def x(self, val):
+        """
+        ...
+        """
+        self.int_checker(val, 'x')
+        self.__x = val
+
+    @property
+    def y(self):
+        """
+        ...
+        """
+        return self.__y
+
+    @y.setter
+    def y(self, val):
+        """
+        ...
+        """
+        self.int_checker(val, 'y')
+        self.__y = val
 
     def area(self):
         """
@@ -74,20 +134,15 @@ class Rectangle(Base):
             for i in range(len(args)):
                 setattr(self, my_dict[i], args[i])
 
-    def __str__(self, form='Rectangle'):
+    def __str__(self):
         """
         Args:
             form (str): form created. Defaults to 'Rectangle'.
 
         Returns a personalized message
         """
-        if form == 'Square':
-            return '[{}] ({:d}) {:d}/{:d} - {:d}'.format(
-                form, self.id, self.__x, self.__y, self.__width
-                )
-
-        return '[{}] ({:d}) {:d}/{:d} - {:d}/{:d}'.format(
-            form, self.id, self.__x, self.__y, self.__width, self.__height
+        return '[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}'.format(
+            self.id, self.x, self.y, self.width, self.height
         )
 
     @staticmethod
@@ -115,64 +170,10 @@ class Rectangle(Base):
         """
         Return class dictionary
         """
-        return vars(self)
-
-    @property
-    def width(self):
-        """
-        ...
-        """
-        return self.__width
-
-    @width.setter
-    def width(self, val):
-        """
-        ...
-        """
-        self.int_checker(val, 'width')
-        self.__width = val
-
-    @property
-    def height(self):
-        """
-        ...
-        """
-        return self.__height
-
-    @width.setter
-    def height(self, val):
-        """
-        ...
-        """
-        self.int_checker(val, 'height')
-        self.__height = val
-
-    @property
-    def x(self):
-        """
-        ...
-        """
-        return self.__x
-
-    @width.setter
-    def x(self, val):
-        """
-        ...
-        """
-        self.int_checker(val, 'x')
-        self.__x = val
-
-    @property
-    def y(self):
-        """
-        ...
-        """
-        return self.__y
-
-    @width.setter
-    def y(self, val):
-        """
-        ...
-        """
-        self.int_checker(val, 'y')
-        self.__y = val
+        return {
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width
+        }
