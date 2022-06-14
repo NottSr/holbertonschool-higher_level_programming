@@ -78,7 +78,7 @@ class Base:
         Returns updated instance
         """
         if cls.__name__ == 'Rectangle':
-            Inst = cls(89)
+            Inst = cls(89, 89)
         if cls.__name__ == 'Square':
             Inst = cls(89)
         Inst.update(**dictionary)
