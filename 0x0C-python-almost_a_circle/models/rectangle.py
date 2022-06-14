@@ -34,9 +34,15 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
+        """
+        Return the area
+        """
         return (self.__width * self.__height)
 
     def display(self):
+        """
+        Method that prints the form
+        """
         if self.__y > 0:
             for i in range(self.__y):
                 print()
@@ -51,6 +57,9 @@ class Rectangle(Base):
             print()
 
     def update(self, *args, **kwargs):
+        """
+        Method that update values
+        """
         if len(args) == 0:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
@@ -66,6 +75,12 @@ class Rectangle(Base):
                 setattr(self, my_dict[i], args[i])
 
     def __str__(self, form='Rectangle'):
+        """
+        Args:
+            form (str): form created. Defaults to 'Rectangle'.
+
+        Returns a personalized message
+        """
         if form == 'Square':
             return '[{}] ({:d}) {:d}/{:d} - {:d}'.format(
                 form, self.id, self.__x, self.__y, self.__width
@@ -77,6 +92,16 @@ class Rectangle(Base):
 
     @staticmethod
     def int_checker(val, meth):
+        """
+        Args:
+            val: value
+            meth: Str representation of method to update
+
+        Raises:
+            TypeError: must be an integer
+            ValueError: the width or height must be > 0
+            ValueError: the x or y must be >= 0
+        """
         if type(val) is not int:
             raise TypeError(f'{meth} must be an integer')
 
@@ -87,40 +112,67 @@ class Rectangle(Base):
             raise ValueError(f'{meth} must be >= 0')
 
     def to_dictionary(self):
+        """
+        Return class dictionary
+        """
         return vars(self)
 
     @property
     def width(self):
+        """
+        ...
+        """
         return self.__width
 
     @width.setter
     def width(self, val):
+        """
+        ...
+        """
         self.int_checker(val, 'width')
         self.__width = val
 
     @property
     def height(self):
+        """
+        ...
+        """
         return self.__height
 
     @width.setter
     def height(self, val):
+        """
+        ...
+        """
         self.int_checker(val, 'height')
         self.__height = val
 
     @property
     def x(self):
+        """
+        ...
+        """
         return self.__x
 
     @width.setter
     def x(self, val):
+        """
+        ...
+        """
         self.int_checker(val, 'x')
         self.__x = val
 
     @property
     def y(self):
+        """
+        ...
+        """
         return self.__y
 
     @width.setter
     def y(self, val):
+        """
+        ...
+        """
         self.int_checker(val, 'y')
         self.__y = val
