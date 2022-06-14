@@ -5,6 +5,7 @@ Define class
 
 
 import json
+from os import path
 
 
 class Base:
@@ -83,3 +84,20 @@ class Base:
             Inst = cls(89)
         Inst.update(**dictionary)
         return Inst
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances
+        """
+        file_name = cls.__name__ + '.json'
+        insts = []
+
+        if path.exists(file_name) is False:
+            return []
+
+        with open(file_name, 'r', encoding='utf-8') as f:
+            list_objs = cls.from_json_string(f.read())
+            for elm in list_objs:
+                insts.append(cls.create(**elm))
+            return insts
