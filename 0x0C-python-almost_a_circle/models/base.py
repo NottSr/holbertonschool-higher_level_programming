@@ -43,5 +43,13 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         file_name = cls.__name__ + '.json'
-        if list_objs is None:
-            return
+        elm_dict = []
+
+        with open(file_name, 'w', encoding='utf-8') as f:
+            if list_objs is None:
+                f.write(cls.to_json_string(None))
+
+            for elm in list_objs:
+                elm_dict.append(elm.to_dictionary())
+
+            return f.write(cls.to_json_string(elm_dict))
