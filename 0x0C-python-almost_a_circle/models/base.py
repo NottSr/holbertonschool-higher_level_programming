@@ -46,8 +46,7 @@ class Base:
         Args:
             list_objs: _description_
 
-        Returns:
-            _type_: _description_
+        Returns: 
         """
         file_name = cls.__name__ + '.json'
         elm_dict = []
@@ -60,3 +59,9 @@ class Base:
 
         with open(file_name, 'w', encoding='utf-8') as f:
             return f.write(cls.to_json_string(elm_dict))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or json_string == 0:
+            return []
+        return json.loads(json_string)
