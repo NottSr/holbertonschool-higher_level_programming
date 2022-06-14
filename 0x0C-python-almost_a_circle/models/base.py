@@ -83,5 +83,3 @@ class Base:
             Inst = cls(89)
         Inst.update(**dictionary)
         return Inst
-
-
