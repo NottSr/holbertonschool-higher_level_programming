@@ -23,11 +23,6 @@ class Rectangle(Base):
 
         super().__init__(id)
 
-        self.int_checker(width, 'width')
-        self.int_checker(height, 'height')
-        self.int_checker(x, 'x')
-        self.int_checker(y, 'y')
-
         self.__width = width
         self.__height = height
         self.__x = x
