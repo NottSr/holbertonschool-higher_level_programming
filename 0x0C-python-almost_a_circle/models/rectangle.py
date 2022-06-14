@@ -176,6 +176,3 @@ class Rectangle(Base):
         """
         self.int_checker(val, 'y')
         self.__y = val
-
-    if __name__ == "__main__":
-        pass
