@@ -12,7 +12,7 @@ class TetsBaseClass(unittest.TestCase):
     """Test cases for the Base class"""
     base_1 = Base()
     base_2 = Base()
-    base_3 = Base()
+    base_3 = Base(5)
 
     def test_positive_numbers(self):
         """test number more or equal greather than zero"""
