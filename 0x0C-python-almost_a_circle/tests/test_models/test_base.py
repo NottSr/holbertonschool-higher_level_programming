@@ -26,16 +26,16 @@ class TetsBaseClass(unittest.TestCase):
     def test_none_value(self):
         """None value to id"""
         base1 = Base()
-        self.assertEqual(base1.id, 4)
+        self.assertEqual(base1.id, 3)
         base2 = Base()
-        self.assertEqual(base2.id, 5)
+        self.assertEqual(base2.id, 4)
         base3 = Base()
-        self.assertEqual(base3.id, 6)
+        self.assertEqual(base3.id, 5)
         base4 = Base()
-        self.assertEqual(base4.id, 7)
+        self.assertEqual(base4.id, 6)
         base5 = Base()
-        self.assertEqual(base4.id, 7)
-        self.assertEqual(base5.id, 8)
+        self.assertEqual(base4.id, 6)
+        self.assertEqual(base5.id, 7)
 
     def test_negative_numbers(self):
         """test number less than zero"""

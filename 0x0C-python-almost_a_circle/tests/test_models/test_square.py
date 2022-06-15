@@ -19,9 +19,9 @@ class TetsSquare_01_attributes(unittest.TestCase):
         """
 
         r1 = Square(10)
-        self.assertEqual(r1.id, 48)
+        self.assertEqual(r1.id, 47)
         r2 = Square(2)
-        self.assertEqual(r2.id, 49)
+        self.assertEqual(r2.id, 48)
         r3 = Square(2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
         self.assertNotIsInstance(r3.height, Square)
