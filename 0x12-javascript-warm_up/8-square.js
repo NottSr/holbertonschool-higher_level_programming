@@ -2,8 +2,8 @@
 
 /* Script that prints a square */
 
-const args = process.argv;
-const x = parseInt(args[2]);
+const args = process.argv.map(item => item[0]).filter(val => !isNaN(val));
+const x = parseInt(args[0]);
 let i = 0;
 
 if (isNaN(x)) {
