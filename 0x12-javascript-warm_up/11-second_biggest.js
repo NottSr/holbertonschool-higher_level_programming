@@ -2,31 +2,31 @@
 
 /* Script that searches the second biggest integer in the list of arguments. */
 
-const args = process.argv;
-let i = 4;
-let sbig = 0;
+const args = process.argv.map(item => item[0]).filter(val => !isNaN(val));
+let i = 2;
+let s_big = 0;
 let big = 0;
 
-if (args[3]) {
-  if (args[2] > args[3]) {
-    big = parseInt(args[2]);
-    sbig = parseInt(args[3]);
+if (args[1]) {
+  if (args[0] > args[1]) {
+    big = parseInt(args[0]);
+    s_big = parseInt(args[1]);
   } else {
-    big = parseInt(args[3]);
-    sbig = parseInt(args[2]);
+    big = parseInt(args[1]);
+    s_big = parseInt(args[0]);
   }
 
   while (i < args.length) {
     if (args[i] > big) {
-      sbig = big;
+      s_big = big;
       big = args[i];
-    } else if (args[i] > sbig) {
-      sbig = args[i];
+    } else if (args[i] > s_big) {
+      s_big = args[i];
     }
     i++;
   }
 
-  console.log(sbig);
+  console.log(s_big);
 } else {
   console.log('0');
 }
