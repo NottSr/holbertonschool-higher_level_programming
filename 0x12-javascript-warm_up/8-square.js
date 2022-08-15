@@ -8,9 +8,9 @@ let i = 0;
 
 if (isNaN(x)) {
   console.log('Missing size');
-}
-
-while (i < x) {
-  console.log('X'.repeat(x));
-  i++;
+} else {
+  while (i < x) {
+    console.log('X'.repeat(x));
+    i++;
+  }
 }
