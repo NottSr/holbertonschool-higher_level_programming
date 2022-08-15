@@ -11,6 +11,6 @@ if (isNaN(x)) {
 }
 
 while (i < x) {
-  console.log('x'.repeat(x));
+  console.log('X'.repeat(x));
   i++;
 }
