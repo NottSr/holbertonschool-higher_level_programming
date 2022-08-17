@@ -11,8 +11,9 @@ axios.get(arg)
     let count = 0;
     for (const key of response.data.results) {
       for (const elem of key.characters) {
-        if (elem === 'https://swapi-api.hbtn.io/api/people/18/') {
+        if (elem.endsWith('18/')) {
           count++;
+          break;
         }
       }
     }
