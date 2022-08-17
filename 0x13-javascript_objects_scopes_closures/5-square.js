@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-/* Class Rectangle that defines a rectangle */
+/* Class Square that defines a square inherits Rectangle */
 
 const Rectangle = require('./4-rectangle');
 
