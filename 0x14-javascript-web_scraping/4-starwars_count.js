@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-/* Script that prints the title of a Star Wars movie where the episode number matches a given integer */
+/* Script that prints the number of movies where the character “Wedge Antilles” is present */
 
 const arg = process.argv[2];
 const axios = require('axios').default;
