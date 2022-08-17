@@ -12,5 +12,5 @@ axios.get(args[2])
       if (err) {
         console.error(err);
       }
-    })
+    });
   });
