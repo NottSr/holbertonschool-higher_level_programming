@@ -9,7 +9,7 @@ axios.get(process.argv[2])
     // Success execution
     console.log('code: ' + response.status);
   })
-  .catch(function (err) {
+  .catch(function (error) {
     // Error execution
-    console.error('code: ' + err.response.status);
+    console.error('code: ' + error.response.status);
   });
