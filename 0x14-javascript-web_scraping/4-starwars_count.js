@@ -17,8 +17,4 @@ axios.get(arg)
       }
     }
     console.log(count);
-  })
-  .catch(function (err) {
-    // Error execution
-    console.log('code: ' + err.response.status);
   });
