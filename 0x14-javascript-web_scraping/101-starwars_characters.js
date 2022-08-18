@@ -6,7 +6,7 @@ const arg = process.argv[2];
 const axios = require('axios').default;
 
 axios.get('https://swapi-api.hbtn.io/api/films/' + arg)
-  .then(function (response) {
+  .then(async (response) => {
     // Success execution
     for (const key of response.data.characters) {
       const sendRequest = async () => {
@@ -17,6 +17,6 @@ axios.get('https://swapi-api.hbtn.io/api/films/' + arg)
           console.error(error);
         }
       };
-      sendRequest();
+      await sendRequest();
     }
   });
