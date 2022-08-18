@@ -10,8 +10,8 @@ axios.get('https://swapi-api.hbtn.io/api/films/' + arg)
     // Success execution
     for (const key of response.data.characters) {
       axios.get(key)
-      .then((res) => {
-        console.log(res.data.name);
-      });
+        .then((res) => {
+          console.log(res.data.name);
+        });
     }
   });
