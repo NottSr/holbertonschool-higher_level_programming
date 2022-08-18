@@ -9,7 +9,7 @@ axios.get('https://swapi-api.hbtn.io/api/films/' + arg)
   .then(function (response) {
     // Success execution
     for (const key of response.data.characters) {
-      async function pChar() {
+      const sendRequest = async () => {
         try {
           const res = await axios.get(key);
           console.log(res.data.name);
@@ -17,6 +17,6 @@ axios.get('https://swapi-api.hbtn.io/api/films/' + arg)
           console.error(error);
         }
       };
-      pChar();
+      sendRequest();
     }
   });
