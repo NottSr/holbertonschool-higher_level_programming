@@ -9,9 +9,14 @@ axios.get('https://swapi-api.hbtn.io/api/films/' + arg)
   .then(function (response) {
     // Success execution
     for (const key of response.data.characters) {
-      axios.get(key)
-        .then((res) => {
+      async function pChar() {
+        try {
+          const res = await axios.get(key);
           console.log(res.data.name);
-        });
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      pChar();
     }
   });
