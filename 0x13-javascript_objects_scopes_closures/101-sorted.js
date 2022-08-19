@@ -6,11 +6,11 @@ and computes a dictionary of user ids by occurrence */
 const dict = require('./101-data.js').dict;
 const nDict = {};
 
-Object.keys(dict).map(key => {
-  if (!Array.isArray(nDict[dict[key]])) {
+for (const key in dict) {
+  if (!nDict[dict[key]]) {
     nDict[dict[key]] = [];
   }
   nDict[dict[key]].push(key);
-});
+}
 
 console.log(nDict);
