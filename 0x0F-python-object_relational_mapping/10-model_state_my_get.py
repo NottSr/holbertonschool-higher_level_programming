@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     """
     Cicle that goes through query State ordered by id
-    to print instance id and name if 'a' is found in name
+    to find a match
     """
     found_inst, id_found = 0, 0
 
