@@ -28,11 +28,11 @@ if __name__ == "__main__":
     session = Session()
 
     """
-    Cicle that goes through query State ordered by id
-    to find a match and change state name at id = 2
+    Cicle that goes through query State filtered and
+    deletes instance that the name contains an 'a'
     """
-    for inst in session.query(State).order_by(State.id):
-        if "a" in inst.name:
-            session.delete(inst)
+    for inst in session.query(State).filter(State.name.contains('a')):
+        session.delete(inst)
 
     session.commit()
+    session.close()
