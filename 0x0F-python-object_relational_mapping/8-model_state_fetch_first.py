@@ -30,13 +30,13 @@ if __name__ == "__main__":
     """
     Save in a var called instances
     """
-    instances = session.query(State).order_by(State.id)
+    inst = session.query(State).order_by(State.id).first()
 
     """
     If the table states is empty, print Nothing followed by a new line
     otherwise, print first instance id and name values
     """
-    if instances is None:
+    if inst is None:
         print("Nothing")
     else:
-        print(f"{instances[0].id}: {instances[0].name}")
+        print(f"{inst.id}: {inst.name}")
