@@ -36,3 +36,4 @@ if __name__ == "__main__":
             inst.name = "New Mexico"
 
     session.commit()
+    session.close()
