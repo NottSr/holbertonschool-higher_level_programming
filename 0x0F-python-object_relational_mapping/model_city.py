@@ -4,8 +4,9 @@ Script that lists all cities from the database hbtn_0e_0_usa
 """
 
 
-from model_state import Base, State
+from model_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
+
 
 class City(Base):
     """
