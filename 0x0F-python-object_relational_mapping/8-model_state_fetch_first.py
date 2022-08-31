@@ -28,11 +28,15 @@ if __name__ == "__main__":
     session = Session()
 
     """
-    Save in a dict
+    Save in a var called instances
     """
     instances = session.query(State).order_by(State.id)
 
-    if instances is not None:
-        print(f"{instances[0].id}: {instances[0].name}")
-    else:
+    """
+    If the table states is empty, print Nothing followed by a new line
+    otherwise, print first instance id and name values
+    """
+    if instances is None:
         print("Nothing")
+    else:
+        print(f"{instances[0].id}: {instances[0].name}")
