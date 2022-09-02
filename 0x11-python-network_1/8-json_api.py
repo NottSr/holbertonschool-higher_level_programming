@@ -16,7 +16,7 @@ if __name__ == "__main__":
     if len(argv) == 1:
         q = ''
     else:
-        q = argv[2]
+        q = argv[1]
 
     try:
         url = "http://0.0.0.0:5000/search_user"
