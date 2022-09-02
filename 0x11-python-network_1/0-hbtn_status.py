@@ -4,15 +4,15 @@ Python script
 """
 
 
-import urllib.request
+from urllib import request
 
 if __name__ == "__main__":
     """
     Python script that fetches https://intranet.hbtn.io/status
     """
-    req = urllib.request.Request("https://intranet.hbtn.io/status")
+    req = request.Request("https://intranet.hbtn.io/status")
 
-    with urllib.request.urlopen(req) as res:
+    with request.urlopen(req) as res:
         html = res.read()
         print("Body response:")
         print(f"\t- type: {type(html)}")
