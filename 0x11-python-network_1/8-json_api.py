@@ -22,12 +22,11 @@ if __name__ == "__main__":
         url = "http://0.0.0.0:5000/search_user"
         value = {'q': q}
 
-        html = requests.post(url, data=value)
+        html = requests.post(url, value).json()
 
-        html_j = html.json()
-        if {'id', 'name'} <= html_j.keys():
-            print("[{}] {}".format(html_j.get("id"), html_j.get("name")))
-        else:
+        if len(html) == 0:
             print("No result")
+        else:
+            print("[{}] {}".format(html.get("id"), html.get("name")))
     except ValueError:
         print("Not a valid JSON")
