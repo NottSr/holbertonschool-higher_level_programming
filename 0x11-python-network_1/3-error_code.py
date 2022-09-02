@@ -5,8 +5,8 @@ Python script
 
 
 from sys import argv
-from urllib import error
-from urllib import request
+import urllib.error
+import urllib.request
 
 if __name__ == "__main__":
     """
@@ -17,8 +17,8 @@ if __name__ == "__main__":
     url = argv[1]
 
     try:
-        with request.urlopen(url) as res:
+        with urllib.request.urlopen(url) as res:
             html = res.read()
             print(html.decode('utf-8'))
-    except error.URLError as err:
+    except urllib.error.HTTPError as err:
         print(f"Error code: {err}")
