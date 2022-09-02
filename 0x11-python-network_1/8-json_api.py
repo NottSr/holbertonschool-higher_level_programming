@@ -14,16 +14,20 @@ if __name__ == "__main__":
     """
 
     if len(argv) == 1:
-        q = ""
+        q = ''
     else:
         q = argv[2]
 
     try:
-        html = requests.post("http://0.0.0.0:5000/search_user", data={"q": q})
-        dato = html.json()
-        if dato == {}:
+        url = "http://0.0.0.0:5000/search_user"
+        value = {'q': q}
+
+        html = requests.post(url, data=value)
+
+        html_j = html.json()
+        if len(html_j) == 0:
             print("No result")
         else:
-            print("[{}] {}".format(dato.get("id"), dato.get("name")))
+            print("[{}] {}".format(html_j.get("id"), html_j.get("name")))
     except ValueError:
         print("Not a valid JSON")
