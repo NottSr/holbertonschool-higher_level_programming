@@ -5,7 +5,8 @@ Python script
 
 
 from sys import argv
-from urllib import request, error
+from urllib import error
+from urllib import request
 
 if __name__ == "__main__":
     """
