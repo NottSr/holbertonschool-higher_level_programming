@@ -9,6 +9,7 @@ from urllib import request
 if __name__ == "__main__":
     """
     Python script that fetches https://intranet.hbtn.io/status
+    saving the request in a var and opening using urlopen func
     """
     req = request.Request("https://intranet.hbtn.io/status")
 
