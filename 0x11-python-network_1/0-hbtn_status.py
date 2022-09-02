@@ -14,8 +14,7 @@ if __name__ == "__main__":
 
     with urllib.request.urlopen(req) as res:
         html = res.read()
-
-    print(f"Body response:")
-    print(f"- type: {type(html)}")
-    print(f"- content: {html}")
-    print(f"- utf8 content: {html.decode('UTF8')}")
+        print("Body response:")
+        print(f"\t- type: {type(html)}")
+        print(f"\t- content: {html}")
+        print(f"\t- utf8 content: {html.decode('UTF8')}")
