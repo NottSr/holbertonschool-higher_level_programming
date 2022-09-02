@@ -25,9 +25,9 @@ if __name__ == "__main__":
         html = requests.post(url, data=value)
 
         html_j = html.json()
-        if len(html_j) == 0:
-            print("No result")
-        else:
+        if {'id', 'name'} <= html_j.keys():
             print("[{}] {}".format(html_j.get("id"), html_j.get("name")))
+        else:
+            print("No result")
     except ValueError:
         print("Not a valid JSON")
