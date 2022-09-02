@@ -18,9 +18,8 @@ if __name__ == "__main__":
     else:
         q = argv[2]
 
-    html = requests.post("http://0.0.0.0:5000/search_user", data={"q": q})
-
     try:
+        html = requests.post("http://0.0.0.0:5000/search_user", data={"q": q})
         dato = html.json()
         if dato == {}:
             print("No result")
